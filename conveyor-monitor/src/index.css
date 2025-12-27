@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Updated color scheme for conveyor monitoring - Deep Blue, Orange, Cyan */
+    --background: 222 47% 10%; /* #0F172A */
+    --foreground: 0 0% 98%;
+    --card: 222 47% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 47% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 19 100% 61%; /* #FF6B35 (orange) */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 189 100% 50%; /* #00D9FF (cyan) */
+    --secondary-foreground: 222 47% 10%;
+    --muted: 222 47% 18%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 19 100% 61%; /* same as orange accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 19 100% 61%;
+    --chart-1: 19 100% 61%; /* #FF6B35 */
+    --chart-2: 189 100% 50%; /* #00D9FF */
+    --chart-3: 162 87% 40%; /* #10B981 */
+    --chart-4: 38 92% 50%; /* #F59E0B */
+    --chart-5: 263 70% 63%; /* #8B5CF6 */
+    --radius: 0.625rem;
+    --sidebar: 222 47% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 19 100% 61%;
+    --sidebar-primary-foreground: 222 47% 10%;
+    --sidebar-accent: 189 100% 50%;
+    --sidebar-accent-foreground: 222 47% 10%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 189 100% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 10%;
+    --foreground: 0 0% 98%;
+    --card: 222 47% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 47% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 19 100% 61%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 189 100% 50%;
+    --secondary-foreground: 222 47% 10%;
+    --muted: 222 47% 18%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 19 100% 61%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 189 100% 50%;
+    --chart-1: 19 100% 61%;
+    --chart-2: 189 100% 50%;
+    --chart-3: 162 87% 40%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 263 70% 63%;
+    --sidebar: 222 47% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 19 100% 61%;
+    --sidebar-primary-foreground: 222 47% 10%;
+    --sidebar-accent: 189 100% 50%;
+    --sidebar-accent-foreground: 222 47% 10%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 189 100% 50%;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added custom animations for monitoring dashboard */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.5s ease-out;
+}
+  
